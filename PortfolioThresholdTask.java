@@ -1,14 +1,10 @@
 import java.util.concurrent.RecursiveAction;
-
 public class PortfolioThresholdTask extends RecursiveAction {
-
     private static final int THRESHOLD = 1000;
-
     private double[] assets;
     private int start;
     private int end;
     private double riskCap;
-
     public PortfolioThresholdTask(double[] assets, int start,
                                   int end, double riskCap) {
         this.assets = assets;
@@ -16,7 +12,6 @@ public class PortfolioThresholdTask extends RecursiveAction {
         this.end = end;
         this.riskCap = riskCap;
     }
-
     @Override
     protected void compute() {
         if (end - start <= THRESHOLD) {
@@ -27,17 +22,13 @@ public class PortfolioThresholdTask extends RecursiveAction {
             }
             return;
         }
-
         int middle = start + (end - start) / 2;
-
         PortfolioThresholdTask left =
                 new PortfolioThresholdTask(
                     assets, start, middle, riskCap);
-
         PortfolioThresholdTask right =
                 new PortfolioThresholdTask(
                     assets, middle, end, riskCap);
-
         invokeAll(left, right);
     }
 }
