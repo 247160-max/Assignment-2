@@ -1,7 +1,7 @@
 public class  AsyncWebEngineApp {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(
-            "Main thread: " + Thread.currentThread().getName()
+            "Main thread: " + Thread.currentThread().getname()
         );
         TelemetryThread telemetry = new TelemetryThread();
         telemetry.setName("Telemetry-Worker");
