@@ -15,7 +15,6 @@ public class CacheLocalityBenchmark {
     // Traverse row by row
     public static double traverseRowMajor() {
         double sum = 0;
-
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 sum += matrix[i][j];
@@ -31,7 +30,6 @@ public class CacheLocalityBenchmark {
                 sum += matrix[i][j];
             }
         }
-
         return sum;
     }
     public static void main(String[] args) {
@@ -45,7 +43,6 @@ public class CacheLocalityBenchmark {
             long start = System.nanoTime();
             result = traverseRowMajor();
             long end = System.nanoTime();
-
             rowTotal += end - start;
         }
         for (int i = 0; i < REPETITIONS; i++) {
