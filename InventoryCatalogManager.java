@@ -12,7 +12,7 @@ public class InventoryCatalogManager {
     private static final int PRODUCTS = 100;
     public static void benchmarkSynchronizedMap() throws Exception {
         Map<String, Integer> stock =
-                Collections.synchronizedMap(new HashMap<>());
+                Collection.synchronizedMap(new HashMap<>());
         runBenchmark("Collections.synchronizedMap", stock);
     }
     public static void benchmarkConcurrentMap() throws Exception {
@@ -21,7 +21,7 @@ public class InventoryCatalogManager {
     }
     private static void runBenchmark(
             String mapName, Map<String, Integer> stock) throws Exception {
-        // Initialize product stock
+        //Initialize product stock 
         for (int i = 0; i < PRODUCTS; i++) {
             stock.put("Product-" + i, 100);
         }
