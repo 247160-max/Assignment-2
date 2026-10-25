@@ -14,23 +14,28 @@ public class  PacketSymmetryAuditor {
         }
         boolean isPalindrome = true;
         // Compare stack and queue characters
-        while (!stack.isEmpty() && !queue.isEmpty()) {
+        while (!stack.isEmpty() && !queue.isEmpty()) 
+        {
             char stackChar = stack.pop();
             char queueChar = queue.dequeue();
             System.out.println(
                 "Stack: " + stackChar +
                 " | Queue: " + queueChar
             );
-            if (stackChar != queueChar) {
+            if (stackChar != queueChar)
+            {
                 isPalindrome = false;
                 break;
             }
         }
-        if (isPalindrome) {
+        if (isPalindrome)
+        {
             System.out.println(
                 "Result: Packet is a palindrome."
             );
-        } else {
+        } 
+        else
+        {
             System.out.println(
                 "Result: Packet is NOT a palindrome."
             );
