@@ -1,5 +1,7 @@
-public class  TradingEngineApp {
-    public static void main(String[] args) {
+public class  TradingEngineApp
+    {
+    public static void main(String[] args) 
+        {
         TradeEvent event1 = new FIXOrderEvent(
             "FIX-Gateway", System.currentTimeMillis(),
             10000.0, "ORD-101"
