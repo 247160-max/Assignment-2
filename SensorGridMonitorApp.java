@@ -17,7 +17,7 @@ public class SensorGridMonitorApp {
             new ParallelMinSearch(sensorData, middle, size);
         // Divide data into two halves for maximum search
         ParallelMaxSearch max1 =
-            new ParallelMaxSearch(sensorData, 0, middle);
+            new parallelMaxSearch(sensorData, 0, middle);
         ParallelMaxSearch max2 =
             new ParallelMaxSearch(sensorData, middle, size);
         // Create four worker threads
@@ -26,7 +26,7 @@ public class SensorGridMonitorApp {
         Thread t3 = new Thread(max1, "Max-Worker-1");
         Thread t4 = new Thread(max2, "Max-Worker-2");
         long startTime = System.nanoTime();
-        // Start all four threads
+//start all four threads 
         t1.start();
         t2.start();
         t3.start();
