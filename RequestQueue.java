@@ -11,16 +11,20 @@ public class RequestQueue {
         rear = -1;
         size = 0;
     }
-    public void enqueue(char c) {
-        if (size == capacity) {
+    public void enqueue(char c)
+    {
+        if (size == capacity)
+        {
             throw new IllegalStateException("Queue is full");
         }
         rear = (rear + 1) % capacity;
         queue[rear] = c;
         size++;
     }
-    public char dequeue() {
-        if (isEmpty()) {
+    public char dequeue()
+    {
+        if (isEmpty())
+        {
             throw new IllegalStateException("Queue is empty");
         }
         char c = queue[front];
