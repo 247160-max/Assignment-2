@@ -4,10 +4,13 @@ public class  ParallelMinSearch extends SensorSearchEngine {
         super(sensorData, startIdx, endIdx);
     }
     @Override
-    public double processGrid() {
+    public double processGrid()
+    {
         double min = Double.MAX_VALUE;
-        for (int i = startIdx; i < endIdx; i++) {
-            if (sensorData[i] < min) {
+        for (int i = startIdx; i < endIdx; i++) 
+        {
+            if (sensorData[i] < min) 
+            {
                 min = sensorData[i];
             }
         }
